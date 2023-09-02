@@ -54,7 +54,7 @@ const Login = () => {
                   photoURL: photoURL,
                 })
               );
-              navigate("/browse");
+              // navigate("/browse");
             })
             .catch((error) => {
               setErrorMessage(error.message);
@@ -78,7 +78,7 @@ const Login = () => {
           // Signed in
           const user = userCredential.user;
           console.log("User:", user);
-          navigate("/browse");
+          // navigate("/browse");
           // ...
         })
         .catch((error) => {
