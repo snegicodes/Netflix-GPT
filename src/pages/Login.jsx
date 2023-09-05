@@ -10,6 +10,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
+import { USER_AVATAR } from "../utils/constants";
 
 const Login = () => {
   const [isLoginForm, setIsLoginForm] = useState(true);
@@ -42,7 +43,7 @@ const Login = () => {
           const user = userCredential.user;
           updateProfile(user, {
             displayName: name.current.value,
-            photoURL: "https://avatars.githubusercontent.com/u/117503221?v=4",
+            photoURL: USER_AVATAR,
           })
             .then(() => {
               const { uid, email, displayName, photoURL } = auth.currentUser;
@@ -59,12 +60,11 @@ const Login = () => {
             .catch((error) => {
               setErrorMessage(error.message);
             });
-          console.log("User:", user);
         })
         .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.message;
-          console.log("Error:", errorCode + " -> " + errorMessage);
+
           setErrorMessage(errorCode + " : " + errorMessage);
           // ..
         });
@@ -77,14 +77,13 @@ const Login = () => {
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
-          console.log("User:", user);
+
           // navigate("/browse");
           // ...
         })
         .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.message;
-          console.log("Error:", errorCode + " -> " + errorMessage);
           setErrorMessage(errorCode + " : " + errorMessage);
         });
     }
