@@ -10,3 +10,4 @@ export const API_AUTH_CONFIG = {
       "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1ZWQxYjA3NmNhM2M5M2M5ZmFhYjlmMWJjMmJlNzk0NiIsInN1YiI6IjY0ZjU3Y2Q0OGMyMmMwMDBhY2ZkNGJjMCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.MLeqZV4EyAce-kv2eyuOJ2Tqy5XKkxBPQpxAKTO3T5E",
   },
 };
+export const POSTER_CDN_URL = "https://image.tmdb.org/t/p/w200";
