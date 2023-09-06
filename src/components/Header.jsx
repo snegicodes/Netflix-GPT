@@ -3,8 +3,9 @@ import React, { useEffect } from "react";
 import { auth } from "../utils/firebase";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { addUser, removeUser } from "../utils/userSlice";
+import { addUser, removeUser } from "../store/userSlice";
 import { NETFLIX_LOGO } from "../utils/constants";
+import { toggleGptSearchView } from "../store/gptSlice";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -43,11 +44,21 @@ const Header = () => {
         navigate("/error");
       });
   };
+
+  const handleGptSearchClick = () => {
+    dispatch(toggleGptSearchView());
+  };
   return (
     <div className="absolute w-screen flex justify-between items-center px-8 py-2 bg-gradient-to-b from-black z-10">
       <img className="w-48" src={NETFLIX_LOGO} alt="logo" />
       {user && (
         <div className="flex items-center gap-3">
+          <button
+            className="bg-red-600 text-white py-2 px-4 rounded-md"
+            onClick={handleGptSearchClick}
+          >
+            GPT Search
+          </button>
           <img
             className="w-10 h-10  shadow-lg "
             src={user.photoURL}

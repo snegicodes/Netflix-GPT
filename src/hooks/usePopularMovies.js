@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { API_AUTH_CONFIG } from "../utils/constants";
-import { addPopularMovies } from "../utils/movieSlice";
+import { addPopularMovies } from "../store/movieSlice";
 
 const usePopularMovies = () => {
   const dispatch = useDispatch();

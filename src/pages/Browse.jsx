@@ -5,18 +5,28 @@ import usePopularMovies from "../hooks/usePopularMovies";
 import useNowPlayingMovies from "../hooks/useNowPlayingMovies";
 import useUpcomingMovies from "../hooks/useUpcomingMovies";
 import useTrendingMovies from "../hooks/useTrendingMovies";
+import { useSelector } from "react-redux";
+import GPTSearchContainer from "../components/gptSearchContainer";
 
 const Browse = () => {
+  const showGptSearch = useSelector((store) => store.gpt.showGptSearch);
+
   useNowPlayingMovies();
   usePopularMovies();
   useUpcomingMovies();
   useTrendingMovies();
 
   return (
-    <div className="bg-black">
+    <div>
       <Header />
-      <MainContainer />
-      <SecondaryContainer />
+      {showGptSearch ? (
+        <GPTSearchContainer />
+      ) : (
+        <>
+          <MainContainer />
+          <SecondaryContainer />
+        </>
+      )}
     </div>
   );
 };

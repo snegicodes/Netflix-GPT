@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { API_AUTH_CONFIG } from "../utils/constants";
-import { addTrendingMovies } from "../utils/movieSlice";
+import { addTrendingMovies } from "../store/movieSlice";
 
 const useTrendingMovies = () => {
   const dispatch = useDispatch();
