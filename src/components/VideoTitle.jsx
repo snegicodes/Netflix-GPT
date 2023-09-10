@@ -2,7 +2,7 @@ import { AiOutlineInfoCircle } from "react-icons/ai";
 import { BsPlayFill } from "react-icons/bs";
 const VideoTitle = ({ title, overview }) => {
   return (
-    <div className=" w-screen aspect-video absolute text-white bg-gradient-to-r from-black pt-56 px-16">
+    <div className=" w-screen aspect-video absolute text-white bg-gradient-to-r from-black pt-44 px-16">
       <h1 className="text-5xl font-bold">{title}</h1>
       <p className="py-6 w-1/3 text-lg">{overview}</p>
       <div className="flex gap-3">
