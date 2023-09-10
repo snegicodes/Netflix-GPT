@@ -5,6 +5,8 @@ import { API_AUTH_CONFIG } from "../utils/constants";
 
 const useMovieTrailer = (movieId) => {
   const dispatch = useDispatch();
+  const movieTrailer = useSelector((store) => store.movies.trailerVideo);
+
   const getMovieVideo = async () => {
     const data = await fetch(
       `https://api.themoviedb.org/3/movie/${movieId}/videos?language=en-US`,
@@ -21,7 +23,7 @@ const useMovieTrailer = (movieId) => {
   };
 
   useEffect(() => {
-    getMovieVideo();
+    !movieTrailer && getMovieVideo();
   }, []);
 };
 
