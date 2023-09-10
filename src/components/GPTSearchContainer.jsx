@@ -1,7 +1,7 @@
 import GptSeachBar from "./GptSearchBar";
 import GptSearchSuggestions from "./GptSearchSuggestions";
 
-const GPTSearchContainer = () => {
+const GptSearchContainer = () => {
   return (
     <div>
       <GptSeachBar />
@@ -10,4 +10,4 @@ const GPTSearchContainer = () => {
   );
 };
 
-export default GPTSearchContainer;
+export default GptSearchContainer;
