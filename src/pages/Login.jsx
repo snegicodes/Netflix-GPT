@@ -137,10 +137,18 @@ const Login = () => {
         >
           {isLoginForm ? "Sign In" : "Sign Up"}
         </button>
-        <p className="py-2 text-sm" onClick={toggleFormType}>
-          {isLoginForm
-            ? "New to Netflix? Sign Up Now!"
-            : "Already a User? Sign In Now!"}
+        <p className="py-2 text-sm cursor-pointer" onClick={toggleFormType}>
+          {isLoginForm ? (
+            <div>
+              New to Netflix?{" "}
+              <span className="text-red-600 font-semibold"> Sign Up Now!</span>
+            </div>
+          ) : (
+            <div>
+              Already an User?{" "}
+              <span className="text-red-600 font-semibold"> Sign In Now!</span>
+            </div>
+          )}
         </p>
       </form>
     </div>
