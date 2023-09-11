@@ -55,7 +55,7 @@ const Header = () => {
     dispatch(toggleGptSearchView());
   };
   return (
-    <div className="absolute w-screen flex justify-between items-center px-8 py-2 bg-gradient-to-b from-black z-10">
+    <div className="absolute w-screen flex flex-col md:flex-row items-center md:justify-between md:items-center md:px-8 px-2 py-2 bg-gradient-to-b from-black z-10">
       <img className="w-48" src={NETFLIX_LOGO} alt="logo" />
       {user && (
         <div className="flex items-center gap-3">
@@ -75,16 +75,18 @@ const Header = () => {
             className="bg-red-600 text-white py-2 px-4 mx-2 rounded-md"
             onClick={handleGptSearchClick}
           >
-            {!gptView ? "Try GPT Search" : "Go to Homepage"}
+            {!gptView ? "Try GPT Search" : "Homepage"}
           </button>
-          <img
-            className="w-9 h-9 rounded-sm shadow-lg "
-            src={user.photoURL}
-            alt="user"
-          />
-          <button className="text-white font-bold" onClick={handleSignOut}>
-            Sign Out
-          </button>
+          <div className="flex gap-1 md:gap-3">
+            <img
+              className="w-9 h-9 rounded-sm shadow-lg "
+              src={user.photoURL}
+              alt="user"
+            />
+            <button className="text-white font-bold" onClick={handleSignOut}>
+              Sign Out
+            </button>
+          </div>
         </div>
       )}
     </div>
